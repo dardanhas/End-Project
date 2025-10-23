@@ -1,5 +1,5 @@
-# End-Project
-End Project – Web API & fetch
+# End-Project – Web API & fetch
+
 En enkel single-page web app som hämtar recept från TheMealDB med fetch.
 Man kan söka på namn eller ingrediens, sortera resultaten (A–Z / Z–A) och visa detaljer för varje rätt.
 Funktioner
