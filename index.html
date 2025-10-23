@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Recipe Finder • TheMealDB</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <meta name="description" content="Search recipes from TheMealDB by name or ingredient. View details with ingredients and instructions." />
+</head>
+<body>
+<header class="site-header">
+    <div class="container">
+        <h1>🍽️ Recipe Finder</h1>
+        <p class="lead">Search recipes by <strong>name</strong> or <strong>ingredient</strong>. Click a card for details.</p>
+    </div>
+</header>
+
+<main id="main" class="site-main">
+
+    <section class="controls container" aria-labelledby="controls-title">
+        <h2 id="controls-title" class="visually-hidden">Search & filters</h2>
+
+        <form id="search-form" class="search-form" role="search" aria-label="Recipe search">
+            <div class="row">
+                <label class="visually-hidden" for="query">Search term</label>
+                <input id="query" name="query" type="search" inputmode="search"
+                       placeholder="e.g. chicken • pasta • beef" required />
+                <button type="submit" class="btn-primary">Search</button>
+            </div>
+
+            <div class="row options">
+                <fieldset class="mode" aria-label="Search mode">
+                    <legend class="visually-hidden">Search mode</legend>
+                    <label><input type="radio" name="mode" value="name" checked> Name</label>
+                    <label><input type="radio" name="mode" value="ingredient"> Ingredient</label>
+                </fieldset>
+
+                <label class="sorter">
+                    Sort
+                    <select id="sort" name="sort" aria-label="Sort results">
+                        <option value="az" selected>A–Z</option>
+                        <option value="za">Z–A</option>
+                    </select>
+                </label>
+            </div>
+
+            <output id="status" class="status" role="status" aria-live="polite"></output>
+        </form>
+    </section>
+
+    <section class="results container" aria-labelledby="results-title">
+        <h2 id="results-title">Results</h2>
+        <div id="grid" class="grid" role="list"></div>
+    </section>
+
+    <aside id="details" class="details" aria-labelledby="details-title" hidden>
+        <div class="details__inner">
+            <button id="close-details" class="close" aria-label="Close details">×</button>
+            <article>
+                <header class="details__header">
+                    <img id="details-thumb" alt="" />
+                    <div>
+                        <h2 id="details-title">Details</h2>
+                        <p class="muted"><strong id="details-name"></strong></p>
+                        <p class="muted"><span id="details-category"></span> • <span id="details-area"></span></p>
+                    </div>
+                </header>
+
+                <section>
+                    <h3>Ingredients</h3>
+                    <ul id="details-ingredients" class="ingredients"></ul>
+                </section>
+
+                <section>
+                    <h3>Instructions</h3>
+                    <p id="details-instructions"></p>
+                </section>
+
+                <p><a id="details-source" href="#" target="_blank" rel="noopener noreferrer">Source</a></p>
+            </article>
+        </div>
+    </aside>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <small>
+            Data from <a href="https://www.themealdb.com/" target="_blank" rel="noopener noreferrer">TheMealDB</a>.
+            This app stores your last search in <code>localStorage</code>.
+        </small>
+    </div>
+</footer>
+
+<template id="card-template">
+    <article class="card" role="listitem">
+        <img class="card-thumb" alt="" />
+        <div class="card-body">
+            <h3 class="card-title"></h3>
+            <p class="card-meta muted"></p>
+            <button class="btn-secondary btn-details" type="button">View details</button>
+        </div>
+    </article>
+</template>
+
+<script src="js/app.js" defer></script>
+</body>
+</html>
