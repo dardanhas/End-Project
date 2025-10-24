@@ -13,5 +13,3 @@ Teknik & krav
 •	Array-metoder: sort () för alfabetisk ordning. Filter (Boolean) för att rensa tomma värden. forEach () för att rendera korten.
 •	Async/await: hanterar nätverksanrop och fel med try/catch. 
 •	Dynamisk rendering: DOM byggs med <template> och DocumentFragment för effektivitet.
-
-
