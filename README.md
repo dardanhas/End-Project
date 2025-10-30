@@ -17,5 +17,3 @@ Man kan söka på namn eller ingrediens, sortera resultaten (A–Z / Z–A) och 
 - Array-metoder: sort () för alfabetisk ordning. Filter (Boolean) för att rensa tomma värden. forEach () för att rendera korten.
 - Async/await: hanterar nätverksanrop och fel med try/catch. 
 - Dynamisk rendering: DOM byggs med <template> och DocumentFragment för effektivitet.
-
-LÄNK TILL HEMSIDAN: http://localhost:63342/End-Project/index.html?_ijt=9gme8hps07atiug8aulchadb54&_ij_reload=RELOAD_ON_SAVE
